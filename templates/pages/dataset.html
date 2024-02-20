@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">Masukkan dataset</h5>
+        <form action="{{ url_for('dataset') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="dataset" id="" class="form-control">
+            <div class="pt-3">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</section>
+
+{% if status_data %}
+
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">Pratinjau Data</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    {% for col in kolom %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row_data in row %}
+                <tr>
+                    {% for cell in row_data %}
+                    <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</section>
+{% else %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+    Tidak Ada data tersedia!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endblock %}

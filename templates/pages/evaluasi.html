@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <img src="{{ url_for('static', filename='assets/plot/ta-plot.png')}}" class="img-fluid" alt="plot teknik analisis">
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p>MSE : <b>{{ mse }}</b></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

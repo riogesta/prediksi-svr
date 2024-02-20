@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+        <form action="{{ url_for('dataset') }}" method="post" enctype="multipart/form-data" class="pt-3">
+            <button type="submit" class="btn btn-primary">Analisis Data</button> 
+        </form>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Hasil Prediksi</h5>
+            <img src="{{ url_for('static', filename='assets/plot/pred.png') }}" class="card-img-top" alt="">
+            <div class="">
+                <p>Prediksi untuk <b>{{data['hari']}}</b> hari kedepan: <b>Rp {{data['prediksi']}}</b> dengan sinyal <b>{{data['sinyal']}}</b></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Pengujian MAPE</h5>
+            <div class="">
+                <p>dengan MAPE {{data['mape']}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
